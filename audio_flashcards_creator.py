@@ -54,7 +54,7 @@ def create_anki_cards(text_content, output_file):
         
         response = requests.post(
             'http://localhost:11434/api/generate',
-            json={'model': 'mistral', 'prompt': prompt_text, 'stream': False},
+            json={'model': 'mistral', 'prompt': prompt, 'stream': False},
             timeout=900
 
             # EDITABLE VARIABLE: Request Timeout (maximum number of seconds the script will wait for the AI to respond)
@@ -104,3 +104,4 @@ if __name__ == "__main__":
                     create_anki_cards(text_content, outfile)
         print(f"\n--- ALL DONE! ---")
         print(f"All flashcards have been saved to '{output_filename}'.")
+
